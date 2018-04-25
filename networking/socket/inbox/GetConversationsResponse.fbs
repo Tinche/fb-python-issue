@@ -1,0 +1,9 @@
+include "inbox/Conversation.fbs";
+
+namespace fbs.networking.socket.inbox;
+
+//equivalent to "inbox_view" on legacy api
+table GetConversationsResponse {
+  conversations: [inbox.Conversation];
+}
+root_type GetConversationsResponse;

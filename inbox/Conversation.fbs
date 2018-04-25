@@ -1,0 +1,18 @@
+include "inbox/Message.fbs";
+
+namespace fbs.inbox;
+
+enum ConversationType: byte {
+  Normal, Support, Crew, CrewInvite
+}
+
+table Conversation {
+  id: string (required);
+  type: ConversationType;
+  didJoin: bool;
+  hasActiveTrade: bool;
+  unreadCount: int;
+  memberCount: int;
+  lastMessage: Message;
+}
+root_type Conversation;

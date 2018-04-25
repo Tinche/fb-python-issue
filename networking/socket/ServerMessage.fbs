@@ -1,0 +1,13 @@
+namespace fbs.networking.socket;
+
+enum ServerServiceType : byte {
+  Inbox, Notification
+}
+
+table ServerMessage {
+  id:string; //included in Request/Response messages to match response to request
+
+  type: ServerServiceType;
+  payload:[ubyte] (required);
+}
+root_type ServerMessage;

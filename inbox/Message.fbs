@@ -1,0 +1,14 @@
+namespace fbs.inbox;
+
+enum MessageType: byte {
+  Text, Trade, Image, UserModified
+}
+
+table Message {
+  id: string (required);
+  content: string (required);
+  senderId: string (required);
+  senderName: string (required);
+  type: MessageType;
+}
+root_type Message;

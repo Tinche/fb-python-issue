@@ -1,0 +1,10 @@
+include "networking/socket/inbox/GetConversationsResponse.fbs";
+
+namespace fbs.networking.socket.inbox;
+
+union InboxServerMessageContent { GetConversationsResponse }
+
+table InboxServerMessage {
+  content: InboxServerMessageContent;
+}
+root_type InboxServerMessage;
